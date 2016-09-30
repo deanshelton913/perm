@@ -1,0 +1,4 @@
+{
+  "injectChanges": true,
+  "files": [ "./public/dist/**/*.{html,htm,css,js}" ]
+ }
