@@ -17,7 +17,7 @@ maintanence, and updates to your flat permutations will literally kill you figur
 ### Simple Cartesian Product
 Generate the Cartesian Product of all permutable aguments.
 
-```json
+```javascript
 let perm = new Perm({
   env: ['stg'],
   ageBands: ['CHILD', 'ADULT'],
@@ -26,9 +26,7 @@ let perm = new Perm({
   clientIds: ['MY-CLIENTID.WEB']
 });
 
-console.log(perm.toArray());
-
-//==> [
+console.log(perm.toArray()); //==> [
   { ageBand: 'CHILD',
     country: 'US',
     language: 'en-US',
@@ -63,7 +61,7 @@ In that case you may want you use an explicit permutation.
 
 In this example, We want to run a test script against `stg`, for `ADULT`s, who speak `en-US`,  for 2 British client IDs and one German, from `GB`, and `DE` respectively.
 This perm represents three iterations.
-```json
+```javascript
 let perm = new Perm({
   ageBands: ['ADULT'],
   languages: ['en-US'],
@@ -80,9 +78,7 @@ let perm = new Perm({
   ]
 });
 
-console.log(perm.toArray());
-
-//==> [
+console.log(perm.toArray()); //==> [
     {
       ageBand: 'ADULT',
       country: 'GB',
