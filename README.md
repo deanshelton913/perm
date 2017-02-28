@@ -26,32 +26,34 @@ let perm = new Perm({
   clientIds: ['MY-CLIENTID.WEB']
 });
 
-console.log(perm.toArray()); /* ==> [
-  { ageBand: 'CHILD',
-    country: 'US',
-    language: 'en-US',
-    env: 'stg',
-    clientId: 'MY-CLIENTID.WEB'
-  },{
-    ageBand: 'CHILD',
-    country: 'DE',
-    language: 'en-US',
-    env: 'stg',
-    clientId: 'MY-CLIENTID.WEB'
-  },{
-    ageBand: 'ADULT',
-    country: 'US',
-    language: 'en-US',
-    env: 'stg',
-    clientId: 'MY-CLIENTID.WEB'
-  },{
-    ageBand: 'ADULT',
-    country: 'DE',
-    language: 'en-US',
-    env: 'stg',
-    clientId: 'MY-CLIENTID.WEB'
-  }
-]*/
+console.log(perm.toArray()); /*
+==> [
+      { ageBand: 'CHILD',
+        country: 'US',
+        language: 'en-US',
+        env: 'stg',
+        clientId: 'MY-CLIENTID.WEB'
+      },{
+        ageBand: 'CHILD',
+        country: 'DE',
+        language: 'en-US',
+        env: 'stg',
+        clientId: 'MY-CLIENTID.WEB'
+      },{
+        ageBand: 'ADULT',
+        country: 'US',
+        language: 'en-US',
+        env: 'stg',
+        clientId: 'MY-CLIENTID.WEB'
+      },{
+        ageBand: 'ADULT',
+        country: 'DE',
+        language: 'en-US',
+        env: 'stg',
+        clientId: 'MY-CLIENTID.WEB'
+      }
+    ]
+*/
 ```
 
 ## Explicit Permutations
@@ -78,27 +80,29 @@ let perm = new Perm({
   ]
 });
 
-console.log(perm.toArray()); /* ==> [
-    {
-      ageBand: 'ADULT',
-      country: 'GB',
-      language: 'en-US',
-      clientId: 'UK-CLIENT.FAKE',
-      env: 'stg'
-    },{
-      ageBand: 'ADULT',
-      country: 'GB',
-      language: 'en-US',
-      clientId: 'OTHER-UK.FAKE',
-      env: 'stg'
-    },{
-      ageBand: 'ADULT',
-      country: 'DE',
-      language: 'en-US',
-      clientId: 'GERMAN-GATED-CLIENT.FAKE',
-      env: 'stg'
-    }
-]*/
+console.log(perm.toArray()); /*
+==> [
+      {
+        ageBand: 'ADULT',
+        country: 'GB',
+        language: 'en-US',
+        clientId: 'UK-CLIENT.FAKE',
+        env: 'stg'
+      },{
+        ageBand: 'ADULT',
+        country: 'GB',
+        language: 'en-US',
+        clientId: 'OTHER-UK.FAKE',
+        env: 'stg'
+      },{
+        ageBand: 'ADULT',
+        country: 'DE',
+        language: 'en-US',
+        clientId: 'GERMAN-GATED-CLIENT.FAKE',
+        env: 'stg'
+      }
+  ]
+*/
 ```
 
 ## Install
