@@ -26,7 +26,7 @@ let perm = new Perm({
   clientIds: ['MY-CLIENTID.WEB']
 });
 
-console.log(perm.toArray()); //==> [
+console.log(perm.toArray()); /* ==> [
   { ageBand: 'CHILD',
     country: 'US',
     language: 'en-US',
@@ -51,7 +51,7 @@ console.log(perm.toArray()); //==> [
     env: 'stg',
     clientId: 'MY-CLIENTID.WEB'
   }
-]
+]*/
 ```
 
 ## Explicit Permutations
@@ -78,7 +78,7 @@ let perm = new Perm({
   ]
 });
 
-console.log(perm.toArray()); //==> [
+console.log(perm.toArray()); /* ==> [
     {
       ageBand: 'ADULT',
       country: 'GB',
@@ -98,7 +98,7 @@ console.log(perm.toArray()); //==> [
       clientId: 'GERMAN-GATED-CLIENT.FAKE',
       env: 'stg'
     }
-]
+]*/
 ```
 
 ## Install
