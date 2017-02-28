@@ -2,7 +2,7 @@
   "name": "perm",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "./src/Perm/index.js",
   "scripts": {
     "test": "jasmine || true",
     "watch:build": "tsc -w",
