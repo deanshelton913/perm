@@ -6,7 +6,7 @@ var PermutationList = (function () {
         var _this = this;
         this.permutations = [];
         // build array of permutations
-        PermutationList.cartesianProduct([config.clientIds, config.ageBands, config.countries, config.languages, config.env]).forEach(function (array) {
+        PermutationList.cartesianProduct([config.clientIds, config.ageBands, config.countries, config.languages, config.envs]).forEach(function (array) {
             _this.permutations.push(new Permutation_1.default({ clientId: array[0], ageBand: array[1], country: array[2], language: array[3], env: array[4] }));
         });
     }

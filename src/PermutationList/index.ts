@@ -5,11 +5,11 @@ import Permutation from '../Permutation';
 export default class PermutationList {
   permutations: Permutation[];
 
-  constructor(config: { clientIds: string[], ageBands: string[], countries: string[], languages: string[], env: string[] }) {
+  constructor(config: { clientIds: string[], ageBands: string[], countries: string[], languages: string[], envs: string[] }) {
     this.permutations = [];
 
     // build array of permutations
-    PermutationList.cartesianProduct([config.clientIds, config.ageBands, config.countries, config.languages, config.env]).forEach((array) => {
+    PermutationList.cartesianProduct([config.clientIds, config.ageBands, config.countries, config.languages, config.envs]).forEach((array) => {
       this.permutations.push(new Permutation({clientId: array[0], ageBand: array[1], country: array[2], language: array[3], env: array[4]}));
     })
   }

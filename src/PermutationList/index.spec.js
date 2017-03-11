@@ -1,14 +1,14 @@
 "use strict";
 var PermutationList_1 = require("../PermutationList");
 describe('PermutationList', function () {
-    var validParams = { ageBands: [], countries: [], languages: [], clientIds: [], env: [] }; // kinda lame.
+    var validParams = { ageBands: [], countries: [], languages: [], clientIds: [], envs: [] }; // kinda lame.
     beforeEach(function () {
         validParams = {
             ageBands: ['CHILD'],
             countries: ['US'],
             languages: ['en-US'],
             clientIds: ['FAKE-BUT.VALID'],
-            env: ['stg']
+            envs: ['stg']
         };
     });
     describe('#permutations', function () {

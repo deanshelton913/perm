@@ -11,15 +11,7 @@ export default class Perm {
     if(!config.explicit) {
       this.permutationLists.push(new PermutationList(config));
     }else{
-      let base = {};
-
-      base['clientIds'] = config.clientIds;
-      base['ageBands'] = config.ageBands;
-      base['countries'] = config.countries;
-      base['languages'] = config.languages;
-      base['env'] = config.env;
-
-      this.permutationLists = config.explicit.map((config) => new PermutationList(Object.assign(base, config)));
+      this.permutationLists = config.explicit.map((explicitConfig) => new PermutationList(Object.assign(config, explicitConfig)));
     }
   }
 

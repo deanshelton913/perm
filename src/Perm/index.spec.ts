@@ -4,11 +4,11 @@ import Perm from '.';
 import PermutationList from '../PermutationList';
 
 describe('Perm', () => {
-  let singlePermParams = { ageBands: [], countries: [], languages: [], clientIds: [], env: [] } // kinda lame.
+  let singlePermParams = { ageBands: [], countries: [], languages: [], clientIds: [], envs: [] } // kinda lame.
   let multiplePermListParams = {
     ageBands: ['ADULT'],
     languages: ['en-US'],
-    env: ['stg'],
+    envs: ['stg'],
     explicit: [
       {
         clientIds: ['UK-CLIENT.FAKE', 'OTHER-UK.FAKE'],
@@ -27,7 +27,7 @@ describe('Perm', () => {
       countries: ['US'],
       languages: ['en-US'],
       clientIds: ['FAKE-BUT.VALID'],
-      env: ['stg']
+      envs: ['stg']
     }
   })
 
@@ -46,6 +46,7 @@ describe('Perm', () => {
         const instance = new Perm(multiplePermListParams);
         expect(instance.permutationLists[0].permutations[0].clientId).toEqual(multiplePermListParams.explicit[0].clientIds[0])
         expect(instance.permutationLists[0].permutations[0].country).toEqual(multiplePermListParams.explicit[0].countries[0])
+        expect(instance.permutationLists[0].permutations[0].env).toEqual(multiplePermListParams.envs[0])
         expect(instance.permutationLists[1].permutations[0].clientId).toEqual(multiplePermListParams.explicit[1].clientIds[0])
         expect(instance.permutationLists[1].permutations[0].country).toEqual(multiplePermListParams.explicit[1].countries[0])
         expect(instance.permutationLists[0].permutations.length).toEqual(2);
@@ -74,7 +75,7 @@ describe('Perm', () => {
         ageBand: multiplePermListParams.ageBands[0],
         country: multiplePermListParams.explicit[0].countries[0],
         language: multiplePermListParams.languages[0],
-        env: multiplePermListParams.env[0]
+        env: multiplePermListParams.envs[0]
       })
 
       expect(spy.calls.argsFor(1)[0]).toEqual({
@@ -82,7 +83,7 @@ describe('Perm', () => {
         ageBand: multiplePermListParams.ageBands[0],
         country: multiplePermListParams.explicit[0].countries[0],
         language: multiplePermListParams.languages[0],
-        env: multiplePermListParams.env[0]
+        env: multiplePermListParams.envs[0]
       })
     })
   })

@@ -3,7 +3,7 @@ import {} from 'jasmine';
 import PermutationList from '../PermutationList';
 
 describe('PermutationList', () => {
-  let validParams = { ageBands: [], countries: [], languages: [], clientIds: [], env: [] } // kinda lame.
+  let validParams = { ageBands: [], countries: [], languages: [], clientIds: [], envs: [] } // kinda lame.
 
   beforeEach(() => {
     validParams = {
@@ -11,9 +11,9 @@ describe('PermutationList', () => {
       countries: ['US'],
       languages: ['en-US'],
       clientIds: ['FAKE-BUT.VALID'],
-      env: ['stg']
+      envs: ['stg']
     }
-  })
+  });
 
   describe('#permutations', () => {
     describe('with valid args,', () => {

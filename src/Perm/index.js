@@ -8,13 +8,7 @@ var Perm = (function () {
             this.permutationLists.push(new PermutationList_1.default(config));
         }
         else {
-            var base_1 = {};
-            base_1['clientIds'] = config.clientIds;
-            base_1['ageBands'] = config.ageBands;
-            base_1['countries'] = config.countries;
-            base_1['languages'] = config.languages;
-            base_1['env'] = config.env;
-            this.permutationLists = config.explicit.map(function (config) { return new PermutationList_1.default(Object.assign(base_1, config)); });
+            this.permutationLists = config.explicit.map(function (explicitConfig) { return new PermutationList_1.default(Object.assign(config, explicitConfig)); });
         }
     }
     Perm.prototype.toArray = function () {
