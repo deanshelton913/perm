@@ -26,6 +26,34 @@ describe('Perm', function () {
             envs: ['stg']
         };
     });
+    describe('#merge', function () {
+        it('returns the correct permutations', function () {
+            var base = {
+                ageBands: [null],
+                languages: ['en-US'],
+                envs: [null],
+                explicit: [
+                    {
+                        clientIds: ['UK-CLIENT.FAKE', 'OTHER-UK.FAKE'],
+                        countries: ['GB']
+                    },
+                    {
+                        clientIds: ['GERMAN-GATED-CLIENT.FAKE'],
+                        countries: ['DE']
+                    }
+                ]
+            };
+            var additional = {
+                ageBands: ['ADULT'],
+                envs: ['stg'],
+                countries: [],
+                languages: [],
+                clientIds: []
+            };
+            var perms = new _1.default(base).merge(additional).toArray();
+            expect(perms.length).toEqual(3);
+        });
+    });
     describe('#permutationLists', function () {
         describe('with sigle PermList args,', function () {
             it('returns an array of PermutationLists', function () {

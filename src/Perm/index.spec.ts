@@ -31,6 +31,37 @@ describe('Perm', () => {
     }
   })
 
+  describe('#merge', () => {
+    it('returns the correct permutations', () => {
+      var base = {
+        ageBands: [null],
+        languages: ['en-US'],
+        envs: [null],
+        explicit: [
+          {
+            clientIds: ['UK-CLIENT.FAKE', 'OTHER-UK.FAKE'],
+            countries: ['GB']
+          },
+          {
+            clientIds: ['GERMAN-GATED-CLIENT.FAKE'],
+            countries: ['DE']
+          }
+        ]
+      };
+
+      var additional = {
+        ageBands: ['ADULT'],
+        envs: ['stg'],
+        countries: [],
+        languages: [],
+        clientIds: []
+      }
+      var perms = new Perm(base).merge(additional).toArray();
+      expect(perms.length).toEqual(3)
+
+    })
+  })
+
   describe('#permutationLists', () => {
     describe('with sigle PermList args,', () => {
       it('returns an array of PermutationLists', () => {
